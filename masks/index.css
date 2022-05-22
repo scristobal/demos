@@ -8,7 +8,7 @@ div {
     background: #000;
 }
 
-h1 {
+span {
     font-size: 240px;
     font-family: 'Koulen', cursive;
 
@@ -20,24 +20,37 @@ h1 {
     mask: var(--mask);
     -webkit-background-clip: text;
     background-clip: text;
+    background-size: 200% 200%;
 
     -webkit-text-fill-color: transparent;
 
-    --mask: url('data:image/svg+xml;utf8,<svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 11.25a3.75 3.75 0 1 0 0 -7.5 3.75 3.75 0 0 0 0 7.5z"/></svg>');
+    --mask: url('./star.svg');
     --base-color: rgb(131, 58, 180);
     --halfway-color: rgba(253, 29, 29, 1);
     --endgame-color: rgba(252, 176, 69, 1);
     --gradient-background: linear-gradient(
         90deg,
         var(--base-color) 0%,
-        var(--halfway-color) 10%,
-        var(--endgame-color) 20%
+        var(--halfway-color) 50%,
+        var(--endgame-color) 100%
     );
 
-    animation-duration: 1s;
-    animation-name: scroll;
+    animation-duration: 1s, 10s;
+    animation-name: scroll, roll;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+@keyframes roll {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes scroll {
@@ -47,7 +60,7 @@ h1 {
     }
 
     to {
-        -webkit-mask-position: 30px 0px;
-        mask-position: 30px 0px;
+        -webkit-mask-position: 0px -30px;
+        mask-position: 0px -30px;
     }
 }
