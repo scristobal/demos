@@ -5,14 +5,36 @@
     width: 100%;
     background-size: cover;
     background-image: url(./mountain1.jpg);
+    overflow: hidden;
+    animation: scroll 10s;
+}
+
+@keyframes scroll {
+    from {
+        background-position: 0px -2000px;
+    }
+
+    to {
+        background-position: 0px 0px;
+    }
+}
+
+nav {
+    position: fixed;
 }
 
 .name {
     font-size: 15rem;
     font-family: 'Koulen', cursive;
     color: aliceblue;
+    text-align: center;
+    line-height: 70%;
+    mix-blend-mode: hard-light;
+}
+
+.inplace {
     position: fixed;
-    top: 0%;
+    top: 4rem;
     left: 50%;
     transform: translate(-50%, 0%);
     mix-blend-mode: hard-light;
