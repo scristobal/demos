@@ -14,6 +14,8 @@ span {
 
     margin-top: -5rem;
     margin-left: 2rem;
+    position: relative;
+    overflow: hidden;
 
     background: var(--gradient-background);
     -webkit-mask: var(--mask);
@@ -41,6 +43,19 @@ span {
     animation-timing-function: linear;
 }
 
+span::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    -webkit-mask: url('./star.svg') 0 0 repeat;
+    mask: url('./star.svg') 0 0 repeat;
+    transform: rotate(30deg);
+}
+
 @keyframes roll {
     0% {
         background-position: 0% 50%;
@@ -60,7 +75,7 @@ span {
     }
 
     to {
-        -webkit-mask-position: 0px -30px;
-        mask-position: 0px -30px;
+        -webkit-mask-position: rotate(60deg);
+        mask-position: rotate(-30deg);
     }
 }
