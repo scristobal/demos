@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.bigImage {
+    min-height: 300vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url(./mountain1.jpg);
+}
+
+.name {
+    font-size: 15rem;
+    font-family: 'Koulen', cursive;
+    color: aliceblue;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    mix-blend-mode: hard-light;
+}
+
+body {
+    margin: 0px;
+}
